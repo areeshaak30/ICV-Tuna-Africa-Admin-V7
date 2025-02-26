@@ -93,21 +93,21 @@ export default function Signin() {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 placeholder="Enter Password"
-                className={`w-full h-[45px] px-3 pr-10 border rounded-md text-lg outline-none font-inter ${formik.touched.password && formik.errors.password
+                className={`w-full h-[45px] px-3 pr-10 border rounded-md text-lg outline-none font-inter transition-all duration-200 ${formik.touched.password && formik.errors.password
                   ? "border-red-500"
                   : "border-[#CBD5E1] focus:border-blue-600 focus:ring-2 focus:ring-blue-300"
                   }`}
               />
               <button
                 type="button"
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800 h-[45px] flex items-center"
                 onClick={() => setShowPassword(!showPassword)}
                 aria-label="Toggle Password Visibility"
               >
                 {showPassword ? <HiEye size={22} /> : <HiEyeOff size={22} />}
               </button>
               {formik.touched.password && formik.errors.password && (
-                <p className="text-red-500 text-sm">{formik.errors.password}</p>
+                <p className="text-red-500 text-sm mt-1 absolute -bottom-5">{formik.errors.password}</p>
               )}
             </div>
 
